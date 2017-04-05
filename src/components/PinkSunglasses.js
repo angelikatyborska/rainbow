@@ -5,7 +5,7 @@ import SunglassesGlass from './SunglassesGlass';
 export default class PinkSunglasses extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {x: 0, y: 0};
+    this.state = { x: 0, y: 0 };
   }
   render() {
     /// Sunglasses by Icon Island from the Noun Project
@@ -25,19 +25,19 @@ export default class PinkSunglasses extends React.Component {
     };
     return (
       <div
-        onMouseMove={e => this.setState({x: e.pageX, y: e.pageY})} // TODO: move to onMove over iframe
-        style={{width: '100%', height: '100%', position: 'absolute'}}
+        onMouseMove={e => this.setState({ x: e.pageX, y: e.pageY })} // TODO: move to onMove over iframe
+        style={{ width: '100%', height: '100%', position: 'absolute' }}
       >
-        <svg style={Object.assign({mixBlendMode: 'color'}, style)}>
+        <svg style={Object.assign({ mixBlendMode: 'color' }, style)}>
           <SunglassesGlass color="#f442bc"/>
         </svg>
-        <svg style={Object.assign({mixBlendMode: 'darken'}, style)}>
+        <svg style={Object.assign({ mixBlendMode: 'darken' }, style)}>
           <SunglassesGlass color="#fcc2ea"/>
         </svg>
-        <svg style={Object.assign({mixBlendMode: 'lighten'}, style)}>
+        <svg style={Object.assign({ mixBlendMode: 'lighten' }, style)}>
           <SunglassesGlass color="#4c133a"/>
         </svg>
-        <svg style={Object.assign({mixBlendMode: 'normal'}, style)}>
+        <svg style={Object.assign({ mixBlendMode: 'normal' }, style)}>
           <SunglassesRims />
         </svg>
       </div>
