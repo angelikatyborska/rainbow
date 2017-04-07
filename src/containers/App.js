@@ -2,26 +2,39 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import WebsiteChooser from '../components/WebsiteChooser';
+import BlendChooser from '../components/BlendChooser';
 import Rainbow from '../components/Rainbow';
 
 class App extends Component {
   render() {
-    const { location } = this.props;
-    const url = (location && location.query && location.query.url) || 'http://angelika.me';
-    const blend = (location && location.query && location.query.blend) || 'color';
+    const blendMode = this.getBlendMode();
+
     return (
       <div>
-        <div style={{ position: 'absolute', top: 0, right: 0, left: 0, height: '20px', zIndex: '1' }}>
-          <WebsiteChooser {...{ setUrl: this.props.push, url }} />
+        <Rainbow blendMode={blendMode} />
+        <iframe className="iframe" src={this.getUrl()} />
+        <div className="footer">
+          <BlendChooser blendMode={blendMode} onChange={(v) => this.handleBlendModeChange(v)}/>
         </div>
-        <Rainbow blend={blend} />
-        <iframe
-          src={url}
-          style={{ width: '100%', height: '100%', border: '0' }}
-        />
       </div>
     );
+  }
+
+
+  handleBlendModeChange(value) {
+    this.props.push(
+      `${this.props.location.pathname}?blendMode=${value}&url=${this.getUrl()}`
+    );
+  }
+
+  getUrl() {
+    const { location } = this.props;
+    return (location && location.query && location.query.url) || 'http://angelika.me';
+  }
+
+  getBlendMode() {
+    const { location } = this.props;
+    return (location && location.query && location.query.blendMode) || 'color';
   }
 }
 
