@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name]-[hash].js',
-    publicPath: '/'
+    publicPath: '/rainbow/'
   },
   plugins: [
     /**
@@ -27,7 +27,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.html',
       filename: 'index.html',
-      title: 'Simple Redux Boilerplate',
+      title: 'Rainbow',
       inject: 'body'
     }),
     /**
