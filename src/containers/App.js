@@ -29,7 +29,7 @@ class App extends Component {
 
   getUrl() {
     const { location } = this.props;
-    return (location && location.query && location.query.url) || 'http://angelika.me';
+    return (location && location.query && location.query.url) || 'https://angelika.me';
   }
 
   getBlendMode() {

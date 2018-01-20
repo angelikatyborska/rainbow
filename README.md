@@ -2,9 +2,9 @@
 
 Put a rainbow gradient over a website in an iframe.
 
-A demo of `mix-blend-mode` property of HTML elements, written for this [blog post](http://angelika.me/2017/05/07/blend-mode-in-css/).
+A demo of `mix-blend-mode` property of HTML elements, written for this [blog post](https://angelika.me/2017/05/07/blend-mode-in-css/).
 
-See in action [here](http://angelika.me/rainbow/#/?blendMode=screen&url=http://angelika.me).
+See in action [here](https://angelika.me/rainbow/#/?blendMode=screen&url=https://angelika.me).
 
 ![](screenshot.png)
 
